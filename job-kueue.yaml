@@ -1,14 +1,14 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-    name: train-job-gpu
+    name: train-kueue-job
     labels:
       kueue.x-k8s.io/queue-name: user-queue
 spec:
     template:
         spec:
             containers:
-                - name: train-gpu
+                - name: train-kueue
                   image: wduan10/ml_model
                   resources:
                       requests:
