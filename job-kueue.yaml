@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+    name: train-job-gpu
+    labels:
+      kueue.x-k8s.io/queue-name: user-queue
+spec:
+    template:
+        spec:
+            containers:
+                - name: train-gpu
+                  image: wduan10/ml_model
+                  resources:
+                      limits:
+                          nvidia.com/gpu: 1
+            restartPolicy: Never
+    backoffLimit: 4
