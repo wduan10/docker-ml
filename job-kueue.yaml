@@ -11,7 +11,9 @@ spec:
                 - name: train-gpu
                   image: wduan10/ml_model
                   resources:
-                      limits:
+                      requests:
+                          cpu: 1
+                          memory: "3GB"
                           nvidia.com/gpu: 1
             restartPolicy: Never
     backoffLimit: 4
