@@ -13,7 +13,7 @@ spec:
                   resources:
                       requests:
                           cpu: 1
-                          memory: "3GB"
+                          memory: "3Gi"
                           nvidia.com/gpu: 1
             restartPolicy: Never
     backoffLimit: 4
