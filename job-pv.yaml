@@ -11,7 +11,7 @@ spec:
                       claimName: model-volume-claim
             containers:
                 - name: train
-                  image: wduan10/ml_model
+                  image: wduan10/ml_model:latest
                   volumeMounts:
                       - mountPath: "/usr/saved_models"
                         name: pv-storage
