@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: model-volume-claim
+spec:
+  storageClassName: model-volume
+  accessModes:
+   - ReadWriteOnce
+  resources:
+   requests:
+    storage: 1Gi

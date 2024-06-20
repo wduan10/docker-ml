@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-volume
+  labels:
+    type: local
+spec:
+  capacity:
+   storage: 3Gi
+  volumeMode: Filesystem
+  accessModes:
+   - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: model-volume
+  hostPath:
+    path: "/test/data"
