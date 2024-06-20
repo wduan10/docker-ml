@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-    name: train-job
+    name: train-job-pv
 spec:
     template:
         spec:
