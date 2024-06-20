@@ -138,7 +138,9 @@ for epoch in range(epochs):
 # In[56]:
 
 now = str(datetime.now()).replace(' ', '_')
-torch.save(model.state_dict(), f'saved_models/model_{now}')
+path = f'/usr/saved_models/model_{now}'
+print('Saving model to:', path)
+torch.save(model.state_dict(), path)
 
 
 # In[57]:
