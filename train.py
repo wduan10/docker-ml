@@ -13,12 +13,12 @@ from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 import matplotlib.pyplot as plt
+from datetime import datetime
 
 
 # In[48]:
 
 
-os.makedirs("saved_models", exist_ok=True)
 os.makedirs("data", exist_ok=True)
 
 
@@ -137,8 +137,8 @@ for epoch in range(epochs):
 
 # In[56]:
 
-
-torch.save(model.state_dict(), 'saved_models/model')
+now = str(datetime.now()).replace(' ', '_')
+torch.save(model.state_dict(), f'saved_models/model_{now}')
 
 
 # In[57]:
