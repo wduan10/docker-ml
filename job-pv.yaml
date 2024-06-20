@@ -5,8 +5,15 @@ metadata:
 spec:
     template:
         spec:
+            volumes:
+                - name: pv-storage
+                  persistentVolumeClaim:
+                      claimName: model-volume-claim
             containers:
                 - name: train
                   image: wduan10/ml_model
+                  volumeMounts:
+                      - mountPath: "/usr/saved_models"
+                        name: pv-storage
             restartPolicy: Never
     backoffLimit: 4

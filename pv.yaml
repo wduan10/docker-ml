@@ -10,7 +10,6 @@ spec:
   volumeMode: Filesystem
   accessModes:
    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
   storageClassName: model-volume
   hostPath:
     path: "/test/data"
