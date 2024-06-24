@@ -12,6 +12,8 @@ spec:
             containers:
                 - name: train
                   image: wduan10/ml_model:latest
+                  command: ["python3", "./train.py"]
+                  args: ["pv"]
                   volumeMounts:
                       - mountPath: "/usr/saved_models"
                         name: pv-storage
