@@ -7,4 +7,4 @@ COPY . .
 # install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python3", "./train.py"]
+ENTRYPOINT ["python3", "./train.py"]
