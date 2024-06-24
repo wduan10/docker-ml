@@ -19,6 +19,11 @@ from datetime import datetime
 
 
 os.makedirs("data", exist_ok=True)
+persistent_volume = False
+print('Sys argv:', sys.argv)
+if (len(sys.argv) > 1):
+    persistent_volume = True
+print('Persistent volume:', persistent_volume)
 
 
 # In[49]:
@@ -136,10 +141,11 @@ for epoch in range(epochs):
 
 # In[56]:
 
-now = str(datetime.now()).replace(' ', '_')
-path = f'/usr/saved_models/model_{now}'
-print('\nSaving model to:', path)
-torch.save(model.state_dict(), path)
+if (persistent_volume):
+    now = str(datetime.now()).replace(' ', '_')
+    path = f'/usr/saved_models/model_{now}'
+    print('\nSaving model to:', path)
+    torch.save(model.state_dict(), path)
 
 
 # In[57]:
